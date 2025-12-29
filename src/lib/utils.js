@@ -5,7 +5,6 @@ export const generateToken = (userId, res) => {
     expiresIn: "7d",
   });
 
-  // Determine if we're in production
   const isProduction = process.env.NODE_ENV === "production";
 
   res.cookie("jwt", token, {
@@ -16,5 +15,5 @@ export const generateToken = (userId, res) => {
     path: "/", // Cookie available for all paths
   });
 
-  return token;
+  return token; 
 };
