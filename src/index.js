@@ -40,6 +40,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/admin", adminRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "ChatApp Backend Running" });
+});
 // Start server
 server.listen(PORT, async () => {
   console.log("Server is running on port " + PORT);
